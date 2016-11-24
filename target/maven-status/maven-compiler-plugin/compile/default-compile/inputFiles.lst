@@ -1,3 +1,6 @@
-/home/agi/workspace/chat-server/src/main/java/hm/edu/vs/chat_server/service/ChatMessageReader.java
-/home/agi/workspace/chat-server/src/main/java/hm/edu/vs/chat_server/service/ChatMessageEJB.java
-/home/agi/workspace/chat-server/src/main/java/hm/edu/vs/chat_server/service/ChatMessageWriter.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/ChatMessageWriter.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/PduType.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/ClientConversationStatus.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/ChatMessageEJB.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/ChatMessageReader.java
+/Volumes/sd/Dropbox/Master/Verteilte Systeme/Studienarbeit/chatServer/src/main/java/hm/edu/vs/chat_server/service/ChatPDU.java

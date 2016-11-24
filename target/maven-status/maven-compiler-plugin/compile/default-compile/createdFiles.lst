@@ -1,3 +1,6 @@
-hm/edu/vs/chat_server/service/ChatMessageEJB.class
-hm/edu/vs/chat_server/service/ChatMessageWriter.class
+hm/edu/vs/chat_server/service/ClientConversationStatus.class
 hm/edu/vs/chat_server/service/ChatMessageReader.class
+hm/edu/vs/chat_server/service/ChatMessageWriter.class
+hm/edu/vs/chat_server/service/ChatMessageEJB.class
+hm/edu/vs/chat_server/service/ChatPDU.class
+hm/edu/vs/chat_server/service/PduType.class

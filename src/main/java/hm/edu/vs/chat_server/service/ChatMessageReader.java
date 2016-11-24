@@ -24,22 +24,35 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
+import com.google.gson.Gson;
+import hm.edu.vs.chat_server.service.ChatPDU;
+
 // The @Stateless annotation eliminates the need for manual transaction demarcation
-@MessageDriven(name = "HelloWorldQueueMDB", activationConfig = {
+@MessageDriven(name = "MessageReader", activationConfig = {
 		@ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "queue/testqueue"),
 		@ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class ChatMessageReader implements MessageListener {
-
 	@Inject
 	ChatMessageEJB chatController;
-
+	protected ChatPDU chatPDU = null;
+	protected Gson gson = new Gson();
+	
 	@Override
-	public void onMessage(Message arg0) {
+	public void onMessage(Message m) {
 		System.out.println("Unwrap the message put POJO");
-		TextMessage text = TextMessage.class.cast(arg0);
+		TextMessage message = TextMessage.class.cast(m);
 		try {
-			System.out.println(text.getText());
+			chatPDU = gson.fromJson(message.getText(), ChatPDU.class);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("ERROR: convert json to chatPDU");
+		} finally {
+			System.out.println("CHATPDU:");
+			System.out.println(chatPDU.toString());
+		}
+		try {
+			System.out.println(message.getText());
 		} catch (JMSException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -47,7 +60,7 @@ public class ChatMessageReader implements MessageListener {
 		
 		try {
 			
-			chatController.saveChatMessage(text.getText());
+			chatController.saveChatMessage(message.getText());
 		} catch (JMSException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

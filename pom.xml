@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>hm.edu.vs</groupId>
-	<artifactId>chat-server</artifactId>
+	<artifactId>chatserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>WildFly Quickstarts: chat-server</name>
