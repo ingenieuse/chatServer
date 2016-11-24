@@ -41,6 +41,8 @@ public class ChatMessageReader implements MessageListener {
 	@Override
 	public void onMessage(Message m) {
 		System.out.println("Unwrap the message put POJO");
+		
+		// readChatPDU
 		TextMessage message = TextMessage.class.cast(m);
 		try {
 			chatPDU = gson.fromJson(message.getText(), ChatPDU.class);
@@ -65,5 +67,25 @@ public class ChatMessageReader implements MessageListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	// TODO - Setting CHATPDU Properperties like servertime, serverthreadname etc.
+	private void setChatPDUProperties(){
+		
+	}
+	
+	// TODO - Sending the ChatPDU as json
+	private void sendChatPDU(ChatPDU cPDU){
+		
+	}
+	
+	// TODO - update the trace db entries
+	private void updateTraceDB(){
+			
+	}
+
+	// TODO - update the Count db entries
+	private void updateCountDB(){
+		
 	}
 }
